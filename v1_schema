@@ -1,0 +1,36 @@
+https://www.kaggle.com/datasets/ravindrasinghrana/job-description-dataset/data
+
+Jobs Schema
+{
+    "job_id": str,
+    "experience": str,
+    "qualifications": str,
+    "salary_range": str,
+    "location": str,
+    "latitude": double,
+    "longitude": double,
+    "work_type": str,
+    "company_size": str,
+    "job_posting_date": str,
+    "preference": str, 
+    "contact_person": str,
+    "contact": str,
+    "job_title": str, 
+    "role": str, 
+    "job_portal": str, 
+    "job_description": str,
+    "benefits": str,
+    "skills": str,
+    "responsibilities": str,
+    "company": str,
+    "company_profile": str
+}
+
+
+User Schema
+{
+    "target_titles": list[str],
+    "skills": list[str],
+    "preferred_location": str,
+    "years_experience": int
+}
