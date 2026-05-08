@@ -1,0 +1,61 @@
+Devin Zhang
+248-946-2978 | devzhang@umich.edu | Linkedin | GitHub
+Experience
+Data Scientist- AI Implementations and Partnerships
+General Motors
+Sept. 2025– Present
+• Led an NLP/RAG pipeline using vector search (ANN) and Databricks’ built in reranking model to map A2MAC1
+teardown part descriptions to GM VPPS codes, achieving 92-96% accuracy and reducing manual processing time
+from 2 weeks to 15 minutes per vehicle program.
+• Co-developed an AWS-based VisBOM platform using OpenSearch for vector search, Neptune for graph-based
+relationships, and reranking models to unify PCAR BOM data with Teamcenter images, streamlining executive
+design reviews and influencing $10M+ in design decisions.
+• Architected a multi-agent RAG system in Databricks to automate low-risk vehicle deviation analysis, cutting
+review time from weeks to under 48 hours and enabling data-driven decisions with multi-million dollar impact.
+Global Product Development Rotational Program
+General Motors
+Safety Process Automation Engineer- GSPI
+Jun. 2023- Sept. 2025
+Sept. 2024- Sept. 2025
+• Enhanced the PCEI tool with new in-depth component summaries, connectors, and battery processing, expanding
+functionality by 50% and saving 4+ hours of manual verification per test by using Python and MetaPost.
+• Created a new injury calculator tool, enhancing functionality to include the processing of CAE crash data,
+expanding the number of supported test cases by 30% by using Excel VBA, Python, and MetaPost.
+Software Engineer- Sensor Alignment- Perception AI/ML
+Jun. 2024- Sept. 2024
+• Implemented a data staggering mechanism for different modules, staggering the processing of camera frames
+reducing CPU/Memory utilization by 30%.
+• Deployed a new Python script that graphs timestamps for all Alignment Process steps mapped to CPU/Memory
+consumption over time, reducing the average debugging time by 15%.
+Software Engineer- Ultracruise Longitudinal Execution
+Jun. 2023- Jun. 2024
+• Expanded the ACP4 SIL simulation environment with new software components and vehicle signals using Python,
+C/C++, Linux, Git, and the UC Docker environment, increasing UC Longitudinal controls testing coverage.
+• Engineered scripts to streamline calibration overrides across hundreds of .c files in the ACP4 MCU simulation
+environment, reducing the time spent on overrides by 20%.
+Software Developer Intern
+BDO Digital
+Jan. 2023– Apr. 2023
+Remote
+• Built the BDO Digital March Madness bracket analyzer screen using C#, ASP.NET, Node.js, and Angular, enabling
+over 500+ employees to compare statistics between two teams competing in the March Madness tournament.
+• Trained the natural language model for an acronym classification bot, using Microsoft Azure Language Studio,
+improving the testing validation percentage by over 15%.
+Education
+University of Michigan
+Bachelor of Science in Computer Science
+Projects
+Ann Arbor, MI
+Aug. 2020– May. 2023
+Oritech Chatbot
+May. 2025– May. 2025
+• Developed an AI RAG chat bot using Langchain, OpenAI’s ”text-davinci-003” model, Chroma, and Python to
+answer user questions related to Oritech documentation.
+• Designed a vector database, chat prompt templates, and Langchain LCEL to find the top three documents related
+to the user query and embed the documents into user prompts for more accurate responses.
+Technical Skills
+Languages: Python, C/C++, Java, C#, SQL (MySQL), JavaScript, HTML/CSS, R, Gherkin
+Frameworks: AngularJS, Vue, .Net, Flask, React.js, React Native, jQuery, Bootstrap, Mocha
+Developer Tools: Databricks, Linux, Git, Bitbucket, Jenkins, Jira, Confluence, WebdriverIO, Selenium, Node.js
+Libraries: Langchain, Pytorch, Tensorflow, OpenCV, pandas, NumPy, Matplotlib
+Additional: Multi-Threaded Programming, Object Oriented Programming
