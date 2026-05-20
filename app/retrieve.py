@@ -21,7 +21,7 @@ def load_artifacts():
     return jobs, embeddings
 
 
-def retrieve(query: str, top_k: int = 10) -> list[dict]:
+def retrieve(query: str, top_k: int = 50) -> list[dict]:
     """
     Embed a query and return the top_k most similar jobs.
 
@@ -58,7 +58,7 @@ if __name__ == "__main__":
     )
 
     print(f"Query: {query}\n")
-    results = retrieve(query, top_k=5)
+    results = retrieve(query)
 
     for job in results:
         print(f"[{job['rank']}] {job['Job Title']} — {job['Company']}  (score: {job['similarity_score']:.4f})")
