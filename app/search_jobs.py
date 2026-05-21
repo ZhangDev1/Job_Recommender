@@ -1,12 +1,15 @@
-from app.retrieve import retrieve
+from app.retrieve import retrieve, load_artifacts, load_model
 from app.rank import rerank
 
-def search(query: str, top_k: int = 5):
+def search(query: str, model, jobs, job_embeddings, top_k: int = 5):
     """
     Take a search query, retrieve the top 50 or top_k * 10 candidates, then rerank the top_k candidates.
     
     Args:
         query: search query
+        model: SentenceTransformer model used to encode the query
+        jobs: list of job dicts loaded from the data file
+        job_embeddings: normalized numpy array of job embedding vectors
         top_k: number of k final candidates
     Returns: 
         List of dictionaries of final reranked job results including all metadata.
@@ -14,11 +17,14 @@ def search(query: str, top_k: int = 5):
 
     # Set a candidate minimum to ensure we always have an ample number of reranking candidates later
     candidate_k = max(top_k * 10, 50)
-    top_k_results = retrieve(query, top_k=candidate_k)
+    top_k_results = retrieve(query, model, jobs, job_embeddings, top_k=candidate_k)
     reranked_results = rerank(query, top_k_results, top_k)
     return reranked_results
 
 
 if __name__ == "__main__":
+    jobs, job_embeddings = load_artifacts()
+    model = load_model()
+
     test_query = "AI engineer building LLM agents and RAG pipelines with Python and vector search"
-    print(search(test_query, 5)[:2])
+    print(search(test_query, model, jobs, job_embeddings, 5)[:2])

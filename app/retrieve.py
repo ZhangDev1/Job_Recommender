@@ -21,7 +21,12 @@ def load_artifacts():
     return jobs, embeddings
 
 
-def retrieve(query: str, top_k: int = 50) -> list[dict]:
+def load_model():
+    model = SentenceTransformer(MODEL_NAME)
+    return model
+
+
+def retrieve(query: str, model, jobs, job_embeddings, top_k: int = 50) -> list[dict]:
     """
     Embed a query and return the top_k most similar jobs.
 
@@ -29,9 +34,7 @@ def retrieve(query: str, top_k: int = 50) -> list[dict]:
       - "similarity_score": float in [-1, 1], higher is more relevant
       - "rank": 1-based rank
     """
-    jobs, job_embeddings = load_artifacts()
 
-    model = SentenceTransformer(MODEL_NAME)
     query_vec = model.encode(query, convert_to_numpy=True, normalize_embeddings=True)
 
     # @ is python's built in matrix multiplcation operator
@@ -58,7 +61,9 @@ if __name__ == "__main__":
     )
 
     print(f"Query: {query}\n")
-    results = retrieve(query)
+    jobs, job_embeddings = load_artifacts()
+    model = load_model()
+    results = retrieve(query, model, jobs, job_embeddings)
 
     for job in results:
         print(f"[{job['rank']}] {job['Job Title']} — {job['Company']}  (score: {job['similarity_score']:.4f})")
