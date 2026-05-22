@@ -14,5 +14,8 @@ Job recommendation app
     - When people call the FastAPI API, FastAPI needs to know what the JSON should look like. Pydantic request model sets this up. For this project, it uses the "BaseModel" from the "pydantic" library.
     - FastAPI will automatically reads the incoming JSON request, validate if it matches any of the defined models, and passes it to the endpoint as a "SearchRequest" object. A 422 error will be raised if there were no matching endpoints.
 
+- FastAPI
+    - FastAPI allows loading items with heavy initial loads at the start of the server and saves them in an app.state for later use
+
 # Resources
 Sentence Transformers: https://www.geeksforgeeks.org/nlp/sentence-transformer/
