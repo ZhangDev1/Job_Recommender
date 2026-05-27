@@ -1,16 +1,20 @@
 import streamlit as st
 import requests
+import os
+
+API_URL = os.getenv("API_URL", "http://127.0.0.1:8000")
+
 
 st.title("Job Recommender App")
 query = st.text_area("Enter your query")
 top_k = st.number_input("Number of Results", min_value=1, value=5, step=1)
 
 # Need to wrap top_k as an int because number_input will still return a float
-# value even though we define the step size as 1
+# value even though we define the step size as 1, FastAPI expects int
 payload = {"query": query, "top_k": int(top_k)}
 
 if st.button("Search"):
-    response = requests.post("http://127.0.0.1:8000/search", json=payload)
+    response = requests.post(f"{API_URL}/search", json=payload)
     results = response.json()
 
     for result in results:

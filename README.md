@@ -17,5 +17,11 @@ Job recommendation app
 - FastAPI
     - FastAPI allows loading items with heavy initial loads at the start of the server and saves them in an app.state for later use
 
+- Docker
+    - **What is Docker?** Docker is a containerization software that packages an app and all its dependencies so it runs consistently regardless of the host machine.
+    - **What is a Dockerfile?** A Dockerfile is a recipe file that describes how to build a Docker image including base OS, dependencies to install, and the command to start the app.
+    - **What is docker-compose?** Docker-compose is a config file that defines and orchestrates multiple services (containers) together. This project used two services to keep the FastAPI backend and Streamlit frontend separate.
+    - **Why can't containers use localhost?** Each container has its own isolated network, so `localhost` inside a container refers to that container itself - not the host machine or other containers. Docker Compose creates a shared network between services and assigns each one a DNS name matching its service name. So the Streamlit container reaches the API at `http://api:8000` instead of `http://127.0.0.1:8000`.
+
 # Resources
 Sentence Transformers: https://www.geeksforgeeks.org/nlp/sentence-transformer/
