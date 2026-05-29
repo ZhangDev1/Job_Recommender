@@ -1,12 +1,21 @@
 import streamlit as st
 import requests
 import os
+import pypdf
 
 API_URL = os.getenv("API_URL", "http://127.0.0.1:8000")
 
 
 st.title("Job Recommender App")
-query = st.text_area("Enter your query")
+file = st.file_uploader("Upload your resume (PDF)", type=["pdf"]) 
+
+# Extract all text from the pdf file
+text = []
+if file:
+    for page in pypdf.PdfReader(file).pages:
+        text.append(page.extract_text())
+
+query = st.text_area("Enter your query", value=" ".join(text))
 top_k = st.number_input("Number of Results", min_value=1, value=5, step=1)
 
 # Need to wrap top_k as an int because number_input will still return a float
