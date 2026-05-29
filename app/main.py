@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from fastapi import FastAPI, Request
 from contextlib import asynccontextmanager
 from app.search_jobs import search
@@ -6,7 +6,7 @@ from app.retrieve import load_artifacts, load_model
 
 
 class SearchRequest(BaseModel):
-    query: str
+    query: str = Field(min_length=1)
     top_k: int = 5
 
 
