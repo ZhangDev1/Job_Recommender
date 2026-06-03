@@ -41,7 +41,7 @@ def save_jobs_json(df: pd.DataFrame, output_path: Path):
 
 
 def main():
-    df = load_jobs(INPUT_FILE)
+    df = load_jobs(INPUT_FILE, 15000)
 
     print(f"Loaded {len(df)} jobs")
 
