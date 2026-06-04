@@ -1,3 +1,13 @@
+---
+title: Job Recommender API
+emoji: 🔍
+colorFrom: blue
+colorTo: green
+sdk: docker
+app_port: 8000
+pinned: false
+---
+
 # Job_Recommender
 Job recommendation app
 
