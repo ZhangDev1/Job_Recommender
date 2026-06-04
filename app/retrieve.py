@@ -2,19 +2,19 @@ import json
 import numpy as np
 from pathlib import Path
 from sentence_transformers import SentenceTransformer
+from huggingface_hub import hf_hub_download
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-DATA_DIR = BASE_DIR / "data"
 
-JOBS_PATH = DATA_DIR / "jobs_clean.json"
-EMBEDDINGS_PATH = DATA_DIR / "job_embeddings.npy"
+JOBS_FILENAME = "jobs_clean.json"
+EMBEDDINGS_FILENAME = "job_embeddings.npy"
 MODEL_NAME = "all-MiniLM-L6-v2"
 
 
 def load_artifacts():
-    with open(JOBS_PATH, "r", encoding="utf-8") as f:
+    jobs_path = hf_hub_download(repo_id="devin-z/job-pipeline-data", filename=JOBS_FILENAME, repo_type="dataset")
+    with open(jobs_path, "r", encoding="utf-8") as f:
         jobs = json.load(f)
-    embeddings = np.load(EMBEDDINGS_PATH)
+    embeddings = np.load(hf_hub_download(repo_id="devin-z/job-pipeline-data", filename=EMBEDDINGS_FILENAME, repo_type="dataset"))
     # Normalize rows so dot product == cosine similarity
     norms = np.linalg.norm(embeddings, axis=1, keepdims=True)
     embeddings = embeddings / np.maximum(norms, 1e-10)
