@@ -2,3 +2,5 @@
 **/__pycache__
 **/*.pyc
 job_descriptions.csv
+data/job_embeddings.npy
+data/jobs_clean.json
