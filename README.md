@@ -9,7 +9,9 @@ pinned: false
 ---
 
 # Job_Recommender
-Job recommendation app
+Job recommendation app built with a two-stage retrieval pipeline (bi-encoder + cross-encoder reranking), FastAPI backend, and Streamlit frontend.
+
+**[Live App](https://jobrecommender-8qvcqwhm8hebvxeay2ka6w.streamlit.app/)** | **[API Docs](https://devin-z-job-recommender-api.hf.space/docs)**
 
 # Learning
 - What is the intuition behind cross encoders?
